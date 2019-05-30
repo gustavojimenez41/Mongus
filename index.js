@@ -6,7 +6,7 @@ const app = express();
 app.use(express.json());
 app.use('/api/genres', genres);
 
-mongoose.connect('mongodb://localhost/vidly', { useNewUrlParser: true })
+mongoose.connect('mongodb://localhost/vidly', { useNewUrlParser: true, useFindAndModify: false })
     .then( () => console.log('connected to mongodb...'))
     .catch( (err) => console.log(`error connecting to mongodb: ${err}`));
 
